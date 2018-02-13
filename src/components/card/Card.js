@@ -2,15 +2,29 @@ import React, {Component} from 'react';
 import './card.css';
 
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.likeClickHandler = this.likeClickHandler.bind(this);
+  }
+
+  likeClickHandler(e){
+    if(this.refs.likeIcon.classList.contains('active-icon')){
+      return true;
+    } else {
+    this.props.addUpvote(this.props.cardDetails);
+    this.refs.likeIcon.classList.add('active-icon');
+    return true;
+    }
+  }
 
   render() {
     var loggedIn = this.props.loginProp;
     var loginButton;
     if (loggedIn) {
-      loginButton = <i className="material-icons like-icon u-pointer"
-          onClick={ this.props.addUpvote.bind(this,this.props.cardDetails)}>
+      loginButton = <i ref="likeIcon" className="material-icons like-icon u-pointer"
+          onClick={ this.likeClickHandler }>
           thumb_up
-          <input type="hidden" value="1055074478" />
+          <input type="checkbox" />
       </i>;
     } else {
       loginButton = <span></span>;

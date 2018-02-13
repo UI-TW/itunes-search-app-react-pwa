@@ -8,8 +8,14 @@ class Login extends Component {
     this.signupHandler = this.signupHandler.bind(this);
   }
 
+  componentWillReceiveProps(nextProps){
+    if(nextProps.authenticatedProp){
+      this.props.history.push('/');
+    }
+  }
+
   loginHandler(e) {
-      let pwd = this.refs.password.value;console.log('pwd1', pwd);
+      let pwd = this.refs.password.value;
       this.props.loginAction(this.refs.email.value, pwd);
   }
 
@@ -28,7 +34,7 @@ class Login extends Component {
                 <div className="col s12">
                     <div className="input-field">
                         <i className="material-icons prefix">email</i>
-                        <input ref="email" id="email" type="email" className="validate" />
+                        <input ref="email" id="email" type="email" className="validate" required />
                         <label htmlFor="email" data-error="wrong" data-success="right">Email</label>
                     </div>
                 </div>
@@ -37,7 +43,7 @@ class Login extends Component {
                 <div className="col s12">
                     <div className="input-field">
                         <i className="material-icons prefix">lock</i>
-                        <input ref="password" id="password" type="password" className="validate" />
+                        <input ref="password" id="password" type="password" className="validate" required />
                         <label htmlFor="password" data-error="wrong" data-success="right">Password</label>
                     </div>
                 </div>

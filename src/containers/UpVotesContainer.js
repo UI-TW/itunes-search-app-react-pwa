@@ -15,7 +15,6 @@ class UpVotesContainer extends Component {
 }
 
 const mapStateToProps=(state)=>{
-  console.log('state.UpvotesReducer.upvotelist', state.UpvotesReducer.upvotelist);
   return {
     upvoteList: state.UpvotesReducer.upvotelist
   }

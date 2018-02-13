@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Header from './components/header/Header';
 
@@ -22,7 +22,7 @@ const UpvoteComp = Loadable({
 });
 
 const App = () => (
-  <Router>
+  <Router history={browserHistory}>
     <div>
     <div id="header"><div className="navbar-fixed">
       <nav className="nav dark-primary-color">
