@@ -1,0 +1,31 @@
+@import '../../style/palette.css';
+.list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 46vw);
+}
+
+@media only screen and (min-width: 640px) {
+    .list-wrapper {
+        grid-template-columns: repeat(2, 49vw);
+        grid-gap: 2%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .list-wrapper {
+        grid-template-columns: repeat(3, 31vw);
+        padding: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .list-wrapper {
+        grid-template-columns: repeat(4, 22.5vw);
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .list-wrapper {
+        grid-template-columns: repeat(5, 18vw);
+    }
+}

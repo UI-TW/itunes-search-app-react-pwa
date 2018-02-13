@@ -1,0 +1,40 @@
+@import '../../style/palette.css';
+
+.searchWrapper {
+    display: flex;
+    width: 500px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.searchDropdown {
+    position: absolute;
+    z-index: 99;
+}
+input.search-input-text {
+  margin-left: 160px;
+  background: #fff;
+  padding-left: 10px;
+}
+
+.dropdown {
+  width: 150px;
+  margin-bottom: 20px;
+  border: 1px solid #cecece;
+  background: #f1f1f1;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+.Dropdown-placeholder {
+  background: #2962FF;
+  color: #fff;
+  padding: 10px 0;
+}
+.Dropdown-option {
+  padding: 10px 0;
+  text-align: center;
+}
+.Dropdown-option:hover {
+  background: #fff;
+}
