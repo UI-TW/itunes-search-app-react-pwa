@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="./images/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#303f9f">
+    <title>Hello React</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <noscript>
+  <div class="container">
+    <div class="card-panel blue lighten-2">
+      <h5 class="header">JavaScript Required</h5>
+      <hr/>
+      <p>
+        We're sorry, but our application doesn't work properly without JavaScript enabled.
+      </p>
+    </div>
+  </div>
+</noscript>
+  <div id="react-root"></div>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <!-- Step 1a: Register service worker  -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').then(function (registration) {
+        // Registration was successful
+        console.log('%c ServiceWorker registration successful', 'color: #00ab07');
+      }, function (err) {
+        // registration failed :(
+        console.log('%c ServiceWorker registration failed', 'color: #ca0d2c');
+        console.log(err)
+      });
+    });
+  }
+</script>
+<!-- Step 1a: Register service worker  -->
+</body>
+</html>
