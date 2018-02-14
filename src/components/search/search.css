@@ -2,9 +2,15 @@
 
 .searchWrapper {
     display: flex;
-    width: 500px;
+    width: 100%;
     margin: 20px auto;
     position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .searchWrapper {
+    width: 500px;
+  }
 }
 
 .searchDropdown {
