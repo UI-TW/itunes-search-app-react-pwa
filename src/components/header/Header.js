@@ -2,37 +2,54 @@ import React, {Component} from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
 
-class Card extends Component {
+
+class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillMount(){
+    let sessionLoginStatus = sessionStorage.getItem('login');
+  }
+
   render() {
     return (
-      <div id="header"><div className="navbar-fixed">
+      <div id="header">
+      <div className="navbar-fixed">
         <nav className="nav dark-primary-color">
-          <Link to="/#UpvoteItem"><h1 id="appHeader" role="button" className="title u-pointer">Music finder</h1></Link>
+          <Link to="/"><h1 id="appHeader" role="button" className="title u-pointer">Music finder</h1></Link>
           <div className="spacer"></div>
           <ul className="menu">
             <li className="menu__item">
-              <a href="javascript:void(0);" className="menu__link user_info">
+              <span href="javascript:void(0);" className="menu__link user_info">
                 <i className="material-icons">person</i>
-                Guest
-              </a>
+                { this.props.LogedInUser }
+              </span>
             </li>
             <li className="menu__item ">
-              <a href="javascript:void(0);" id="loginLink" className="menu__link">
+              <Link to="/login" id="loginLink" className="menu__link">
                 <i className="material-icons">input</i>
-                <span className="icon-text">Login/Signup</span>
-              </a>
+                <span className="icon-text">
+                {
+                  (this.props.LoginStatus)
+                  ? <span> Logout </span>
+                  : <span> Login/Signup </span>
+                }
+
+                </span>
+              </Link>
             </li>
             <li className="menu__item active">
-              <a href="javascript:void(0);" id="searchLink" className="menu__link">
+              <Link to="/" id="searchLink" className="menu__link">
                 <i className="material-icons">search</i>
                 <span className="icon-text">Search</span>
-              </a>
+              </Link>
             </li>
             <li className="menu__item ">
-              <a href="javascript:void(0);" id="favLink" className="menu__link">
+              <Link to="/Upvotes" className="menu__link">
                 <i className="material-icons">favorite</i>
                 <span className="icon-text">Upvotes</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -41,4 +58,5 @@ class Card extends Component {
     );
   }
 }
-export default Card;
+
+export default Header;

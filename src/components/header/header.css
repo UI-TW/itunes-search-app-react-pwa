@@ -12,12 +12,14 @@
   padding: 2px;
 }
 
-.menu__item.active a,
-.menu__item.active:hover {
+.menu__item:hover {
   background: var(--text-primary-color);
-  color: var(--dark-primary-color);
 }
 
+.menu__item:hover a,
+.menu__item:hover .user_info{
+  color: #333;
+}
 .menu__link .material-icons {
   display: inline-block;
   vertical-align: middle;
