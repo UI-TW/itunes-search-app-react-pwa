@@ -35,7 +35,7 @@
 }
 
 .user_info:hover {
-  background: var(--dark-primary-color);
+  background: #fff;
 }
 
 @media only screen and (min-width: 360px) {

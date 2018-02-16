@@ -15,6 +15,7 @@ class ListContainer extends Component {
           listOfAlbums={this.props.albumListProp}
           upvoteActionAdd={this.props.addUpvote}
           loginStatus={ this.props.loginStateProp }
+          loadingStatus={this.props.loadingProp }
         />
       </div>
     );
@@ -24,7 +25,8 @@ class ListContainer extends Component {
 const mapStateToProps = (state,props) => {
   return {
     albumListProp: state.SearchReducer.albumlist,
-    loginStateProp: state.LoginReducer.authenticated
+    loginStateProp: state.LoginReducer.authenticated,
+    loadingProp: state.SearchReducer.loading
     };
 };
 
