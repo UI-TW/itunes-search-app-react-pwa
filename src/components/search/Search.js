@@ -7,13 +7,20 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.onDropDownSelect = this.onDropDownSelect.bind(this);
     this.state = {
+      selected: 'All'
     };
+  }
+
+  onDropDownSelect (option) {
+    this.setState({selected: option.label})
   }
 
   handleKeyUp(e) {
     if(e.keyCode === 13){
-      this.props.searchAction(e.target.value);
+      let category = this.state.selected.toLowerCase();
+      this.props.searchAction(e.target.value, category);
     }
   }
 
@@ -35,8 +42,8 @@ class Search extends Component {
         <Dropdown
           className="dropdown"
           options={options}
-          onChange={this._onSelect}
-          value={ options[0] }
+          onChange={this.onDropDownSelect}
+          value={ this.state.selected }
           placeholder="Select an option"
         />
         </div>
@@ -44,7 +51,6 @@ class Search extends Component {
           placeholder="Search"
           onKeyUp={this.handleKeyUp}
           className="search-input-text" />
-
       </div>
     );
   }

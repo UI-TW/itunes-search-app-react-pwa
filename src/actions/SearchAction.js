@@ -1,8 +1,8 @@
 import axios from 'axios';
-export function getAlbumList(searchTerm){
+export function getAlbumList(searchTerm, categorySelected){
   return (dispatch)=>{
     dispatch(loadingStatus(true));
-    return axios.get(`https://itunes-search-iypahdbpmn.now.sh/api/search?media=all&term=${searchTerm}`).then((response)=> {
+    return axios.get(`https://itunes-search-iypahdbpmn.now.sh/api/search?media=${categorySelected}&term=${searchTerm}`).then((response)=> {
       dispatch(albumList(response.data));
       dispatch(loadingStatus(false));
     }).catch(function (error) {

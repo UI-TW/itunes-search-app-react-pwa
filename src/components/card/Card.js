@@ -43,7 +43,7 @@ class Card extends Component {
                 <div className="card-actions u-flex">
                 {loginButton}
 
-                    <a target="_blank" href="https://itunes.apple.com/us/album/ch-check-it-out/724767716?i=724767861&amp;uo=4">
+                    <a target="_blank" href={this.props.cardDetails.trackViewUrl}>
                         More
                     </a>
                 </div>
