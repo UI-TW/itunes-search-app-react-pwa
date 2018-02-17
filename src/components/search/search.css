@@ -4,7 +4,9 @@
     display: flex;
     width: 100%;
     margin: 20px auto;
+    padding: 0 10px;
     position: relative;
+    box-sizing: border-box;
 }
 
 @media screen and (min-width: 768px) {
@@ -17,10 +19,12 @@
     position: absolute;
     z-index: 99;
 }
-input.search-input-text {
+input.search-input-text,
+input.search-input-text:focus:not([readonly]) {
   margin-left: 160px;
   background: #fff;
   padding-left: 10px;
+  border-bottom: 2px solid #448aff;
 }
 
 .dropdown {

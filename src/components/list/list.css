@@ -1,7 +1,16 @@
 @import '../../style/palette.css';
 .list-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 46vw);
+  padding: 20px 4%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 10px 5px;
+  grid-template-columns: repeat(1,98vw);
+  grid-gap: 2%;
 }
 
 .spinnerDiv {
