@@ -4,7 +4,7 @@
   "description": "pwa-itune-react-app",
   "scripts": {
     "lint": "eslint src",
-    "start": "node server.js",
+    "start": "http-server ./dist -p 3050",
     "build":"webpack --config ./webpack/webpack.config.prod.pwa.js --progress --colors --define process.env.NODE_ENV='\"production\"' && workbox inject:manifest"
   },
   "repository": "https://github.com/kunalch/pwa-Itune-react-app.git",

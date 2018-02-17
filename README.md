@@ -10,10 +10,8 @@ A PWA implementation using ReactJS.
 Install the dependencies and start the server.
 
 ```
-npm install
-npm run build
-go to dist folder run any static server
-e.g. python -m SimpleHTTPServer 8000
+ npm install -> npm run build -> go to dist folder -> run any static server,e.g. python -m SimpleHTTPServer 8000
+ npm install -> npm run build -> npm run start
 
 ```
 ```
